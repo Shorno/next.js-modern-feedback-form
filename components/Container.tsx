@@ -10,7 +10,7 @@ export default function Container() {
                     <div className={"h-1/3 w-full rounded-t-xl drop-shadow-xl"}>
                         <Header/>
                     </div>
-                    <div className={"bg-gray-600 w-full h-3/4"}>
+                    <div className={"bg-white w-full h-3/4"}>
                        <FeedbackList/>
                     </div>
                 </div>
