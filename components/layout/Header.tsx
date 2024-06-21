@@ -1,11 +1,12 @@
 import React from "react";
 import {Spotlight} from "@/components/ui/Spotlight";
 import {FeedbackForm} from "@/components/feedback/FeedbackForm";
-import {useFeedbackItemContext} from "@/lib/hooks";
+import {useFeedbackItemStore} from "@/stores/feedbackItemsStore";
 
 
 export function Header() {
-    const {handleAddToList} = useFeedbackItemContext()
+    const addItemToList = useFeedbackItemStore(state => state.addItemToList);
+
     return (
         <div
             className="w-full h-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center">
@@ -16,7 +17,7 @@ export function Header() {
             <p className="text-5xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 mb-5">
                 Next Gen Feedback
             </p>
-            <FeedbackForm onAddToList={handleAddToList}/>
+            <FeedbackForm onAddToList={addItemToList}/>
         </div>
     );
 }

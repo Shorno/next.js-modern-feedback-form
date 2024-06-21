@@ -17,24 +17,7 @@ export function useFeedbackItems() {
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     useEffect(() => {
-        const fetchFeedbackData = async () => {
-            setIsLoading(true)
-
-            try {
-                const response = await fetch("https://bytegrad.com/course-assets/js/1/pattern.svghttps://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks");
-
-                if (!response.ok) {
-                    throw new Error();
-                }
-
-                const data = await response.json();
-                setFeedbackItems(data.feedbacks)
-
-            } catch (error) {
-                setErrorMessage("Something went wrong!")
-            }
-            setIsLoading(false)
-        };
+        const fetchFeedbackData =
 
         fetchFeedbackData()
     }, []);
