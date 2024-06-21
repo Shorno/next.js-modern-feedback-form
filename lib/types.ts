@@ -1,6 +1,6 @@
 export type TFeedbackItem = {
     id: number;
-    companyName: string;
+    company: string;
     badgeLetter: string;
     text: string;
     upvoteCount: number;

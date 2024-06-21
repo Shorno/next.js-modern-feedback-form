@@ -1,12 +1,11 @@
 import React from "react";
 import {Spotlight} from "@/components/ui/Spotlight";
-import {FeedbackForm} from "@/components/FeedbackForm";
+import {FeedbackForm} from "@/components/feedback/FeedbackForm";
+import {useFeedbackItemContext} from "@/lib/hooks";
 
-type HeaderProps = {
-    handleAddToList: (text: string) => void;
-}
 
-export function Header({handleAddToList}: HeaderProps) {
+export function Header() {
+    const {handleAddToList} = useFeedbackItemContext()
     return (
         <div
             className="w-full h-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center">

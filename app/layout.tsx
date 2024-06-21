@@ -6,7 +6,7 @@ import {ThemeProvider} from "@/components/theme-provider";
 const inter = Inter({subsets: ["latin"]});
 
 export const metadata: Metadata = {
-    title: "Tiny Feedback",
+    title: "Tiny feedback",
     description: "Created By Shorno",
 };
 

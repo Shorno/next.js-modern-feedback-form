@@ -1,16 +1,12 @@
 "use client"
-import FeedbackItem from "@/components/FeedbackItem";
+import FeedbackItem from "@/components/feedback/FeedbackItem";
 import Spinner from "@/components/ui/Spinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import {TFeedbackItem} from "@/lib/types";
+import {useFeedbackItemContext} from "@/lib/hooks";
 
-type FeedbackListProps = {
-    feedbackItems: TFeedbackItem[];
-    isLoading: boolean;
-    errorMessage: string;
-}
 
-export default function FeedbackList({feedbackItems, isLoading, errorMessage}: FeedbackListProps) {
+export default function FeedbackList() {
+    const {filteredFeedbackItem, isLoading, errorMessage} = useFeedbackItemContext()
 
 
     return (
@@ -19,7 +15,7 @@ export default function FeedbackList({feedbackItems, isLoading, errorMessage}: F
 
             {errorMessage && <ErrorMessage message={errorMessage}/>}
             <ol>
-                {feedbackItems.map((feedbackItem) => (
+                {filteredFeedbackItem.map((feedbackItem) => (
                     <FeedbackItem key={feedbackItem.id} feedbackItem={feedbackItem}/>
                 ))}
             </ol>
